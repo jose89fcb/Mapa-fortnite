@@ -15,7 +15,7 @@ $file = file_get_contents("https://fortnite-api.com/v1/map?language=$lang", fals
  
  
 $image_data = json_decode($file, true);
-$twitch = json_decode($file, true);
+$mapafn = json_decode($file, true);
  
  
 $news = json_decode($news, true);
@@ -29,7 +29,7 @@ $news = json_decode($news, true);
 ?><?php
 error_reporting(0);
 //Get the file
-$content = file_get_contents($twitch['data']['images']['pois']);
+$content = file_get_contents($mapafn['data']['images']['pois']);
 //Store in the filesystem.
 $fp = fopen("imagenes/map_$lang.png", "w");
 fwrite($fp, $content);
